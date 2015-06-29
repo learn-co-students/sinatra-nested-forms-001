@@ -15,6 +15,7 @@ context "Filling in the Form" do
     fill_in("ship[1][type]", :with => contents[7])
     fill_in("ship[1][booty]", :with => contents[8])
     click_button('Submit')
+
     contents.each do |content|
       expect(page).to have_content(content)
     end
