@@ -2,6 +2,7 @@ require './environment'
 
 module FormsLab
   class App < Sinatra::Base
+    register Sinatra::ActiveRecordExtension
 
     # code other routes/actions here
 
@@ -16,11 +17,12 @@ module FormsLab
     end
 
     post '/pirates' do
-      @pirate = Pirate.new(params[:pirate][:name], params[:pirate][:weight], params[:pirate][:height])
+      @pirate = Pirate.create(params[:pirate])
 
-      @ship1 = Ship.new(params[:ship]["0"][:name], params[:ship]["0"][:type], params[:ship]["0"][:booty])
-      @ship2 = Ship.new(params[:ship]["1"][:name], params[:ship]["1"][:type], params[:ship]["1"][:booty])
+      @ship1 = Ship.create(params[:ship]["0"])
+      @ship2 = Ship.create(params[:ship]["1"])
 
+      # @pirate.ships << [ship1, ship2]
 
       erb :'pirates/show'
     end

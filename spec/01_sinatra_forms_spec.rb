@@ -58,11 +58,11 @@ describe "FormsLab::App" do
         "ship"=> {
           "0"=> {
             "name"=>"Titanic",
-            "type"=>"Steam Liner",
+            "ship_type"=>"Steam Liner",
             "booty"=>"Silver"},
           "1"=> {
             "name"=> "Carpathia",
-            "type"=>"Rescue Ship",
+            "ship_type"=>"Rescue Ship",
             "booty"=>"Inner Tubes"
           }
         }
