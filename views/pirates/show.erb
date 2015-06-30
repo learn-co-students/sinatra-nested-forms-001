@@ -1,7 +1,21 @@
-<h1>Display your Pirate here</h1>
+<%= erb :'layouts/_header' %>
 
+<div class="container">
 
-<h2>Display your first ship here</h2>
+  <h2>Argghhh, say hello to:</h2>
+  <p>Name: <%= @pirate.name %></p>
+  <p>Weight: <%= @pirate.weight %></p>
+  <p>Height: <%= @pirate.height %></p>
 
+  <h2>Their ship info</h2>
 
-<h2>Display your second ship here</h2>
+  <% @pirate.ships.each do |ship|  %>
+      <p>Name: <%= ship.name %></p>
+      <p>Type: <%= ship.ship_type %></p>
+      <p>Booty: <%= ship.booty %></p>
+   <% end %>
+
+</div>
+
+<%= erb :'layouts/_footer' %>
+
