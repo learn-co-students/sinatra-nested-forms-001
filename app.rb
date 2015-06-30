@@ -19,10 +19,9 @@ module FormsLab
     post '/pirates' do
       @pirate = Pirate.create(params[:pirate])
 
-      @ship1 = Ship.create(params[:ship]["0"])
-      @ship2 = Ship.create(params[:ship]["1"])
-
-      # @pirate.ships << [ship1, ship2]
+      params[:ship].each do |ship_key, ship_attributes|
+        @pirate.ships.create(ship_attributes)
+      end
 
       erb :'pirates/show'
     end

@@ -3,19 +3,18 @@
 <div class="container">
 
   <h2>Argghhh, say hello to:</h2>
-  <p><%= @pirate.name %></p>
-  <p><%= @pirate.weight %></p>
-  <p><%= @pirate.height %></p>
+  <p>Name: <%= @pirate.name %></p>
+  <p>Weight: <%= @pirate.weight %></p>
+  <p>Height: <%= @pirate.height %></p>
 
-  <h2>Their ship's info</h2>
+  <h2>Their ship info</h2>
 
-  <p><%= @ship1.name %></p>
-  <p><%= @ship1.ship_type %></p>
-  <p><%= @ship1.booty %></p>
+  <% @pirate.ships.each do |ship|  %>
+      <p>Name: <%= ship.name %></p>
+      <p>Type: <%= ship.ship_type %></p>
+      <p>Booty: <%= ship.booty %></p>
+   <% end %>
 
-  <p><%= @ship2.name %></p>
-  <p><%= @ship2.ship_type %></p>
-  <p><%= @ship2.booty %></p>
 </div>
 
 <%= erb :'layouts/_footer' %>
