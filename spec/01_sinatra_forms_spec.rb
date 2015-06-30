@@ -36,13 +36,13 @@ describe "FormsLab::App" do
 
     it "renders the first ship's input fields for the name, type, and booty attributes on the page" do
       expect(last_response.body).to include("ship[0][name]")
-      expect(last_response.body).to include("ship[0][type]")
+      expect(last_response.body).to include("ship[0][ship_type]")
       expect(last_response.body).to include("ship[0][booty]")
     end
 
     it "renders the second ship's input field for the name, type, and booty attributes on the page" do
       expect(last_response.body).to include("ship[1][name]")
-      expect(last_response.body).to include("ship[1][type]")
+      expect(last_response.body).to include("ship[1][ship_type]")
       expect(last_response.body).to include("ship[1][booty]")
     end
   end
